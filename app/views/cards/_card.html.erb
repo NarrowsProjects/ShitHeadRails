@@ -1,0 +1,23 @@
+<div id="<%= dom_id card %>">
+
+  <div id="card_container" class="flex flex-wrap ">
+    <% if card.weight !~ /2|3|10|7/ %>
+
+      <% %w[4 5 6 8 9 11 12 13 14].each do |weight| %>
+        <% %w[Spades Diamonds Hearts Clubs].each do |color| %>
+          <%= image_tag "cards/#{weight + color}.png", class: "w-1/12" %>
+        <% end %>
+      <% end %>
+      <%else %>
+      <% %w[Spades Diamonds Hearts Clubs].each do |color| %>
+        <%= image_tag "cards/#{card.weight + color}.png", class: "w-1/5" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= card.description %>
+  </p>
+
+</div>
