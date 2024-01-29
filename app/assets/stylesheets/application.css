@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+    height:100%;
+    background: url(https://media.istockphoto.com/id/1766876145/nl/vector/poker-table-casino-background-panoramic-diagonal-gambling-textured-material-design-with.jpg?s=612x612&w=0&k=20&c=wpoMq9eb3K_ehYmkevCVjUz25HovxN1_yNmMcTkOyBw=) center center no-repeat;
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+    margin:0;
+}
+#brand{
+    text-align:center;
+    cursor:pointer;
+}
+#brand img{
+    display:block;
+    width:40vw;
+    max-width:700px;
+    height:auto;
+    transition:0.2s
+}
+#brand a{
+    display:block;
+    font-family: 'Passion One';
+    font-size:3em;
+    color:#333;
+    font-weight:800;
+    text-decoration:none;
+    background:rgba(0,0,40,0);
+    padding:5px 15px;
+    transition:0.4s
+}
+#brand:hover a{
+    color:rgba(200,80,50,1);
+    text-shadow:2px 5px 0 rgba(0,0,0,0.6)
+}
+
+
+
+
+/* follow me @nodws */
+.btn-twtr{
+    color:#ddd;
+    border:2px solid;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-block;
+    padding:5px 10px;
+    font-family:sans-serif;
+    font-weight:600;
+    margin-top:80vh;
+    background:rgba(0,0,0,0.2);
+    box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+    opacity:0.8;
+    position:absolute;
+    bottom:20px;
+    right:20px
+}.btn-twtr:hover{color:#fff;}
+.btn-twtr:after{content:"\1F426";padding-left:5px}
+
+
+.bgImage{
+    overflow: hidden;
+    margin-top: 52px;
+}
+@keyframes spin_words{
+    10%{
+        transform: translateY(-112%);
+    }
+    25%{
+        transform: translateY(-100%);
+    }
+    35%{
+        transform: translateY(-212%);
+    }
+    50%{
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-312%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-412%);
+    }
+
+    100%{
+        transform: translateY(-400%);
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShitHeadRuby</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body class="flex flex-col">
+<header class="w-full flex justify-between content-between items-center bg-red-500">
+  <%= image_tag "cards/Back.png", class: "w-20" %>
+  <div id="navButtons" class="flex h-full">
+    <% { home: root_path, game: game_initialization_path, rules: game_rules_path, cards:cards_path }.each do |label, path| %>
+      <nav class="h-full text-5xl p-5 bg-red-600 ml-2 hover:text-white hover:bg-red-700">
+        <%= link_to label, path %>
+      </nav>
+    <% end %>
+  </div>
+
+
+</header>
+<main class="container mx-auto px-5 flex justify-center">
+  <%= yield %>
+</main>
+</body>
+</html>
