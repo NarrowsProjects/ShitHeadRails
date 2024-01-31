@@ -10,9 +10,4 @@ class GameControllerTest < ActionDispatch::IntegrationTest
     get game_rules_url
     assert_response :success
   end
-
-  test "should get initialization" do
-    get game_initialization_url
-    assert_response :success
-  end
 end

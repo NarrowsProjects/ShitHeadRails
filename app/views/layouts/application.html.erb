@@ -15,7 +15,7 @@
 <header class="w-full flex justify-between content-between items-center bg-red-500">
   <%= image_tag "cards/Back.png", class: "w-20" %>
   <div id="navButtons" class="flex h-full">
-    <% { home: root_path, game: game_initialization_path, rules: game_rules_path, cards:cards_path }.each do |label, path| %>
+    <% { home: root_path, game: new_game_path, rules: game_rules_path, cards:cards_path }.each do |label, path| %>
       <nav class="h-full text-5xl p-5 bg-red-600 ml-2 hover:text-white hover:bg-red-700">
         <%= link_to label, path %>
       </nav>

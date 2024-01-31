@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :cards
+  resources :games
+  resources :players
+  resources :piles
   get 'rules/cards'
   get 'rules/phase'
   get 'game/tutorial'
   get 'game/rules'
-  get 'game/initialization'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

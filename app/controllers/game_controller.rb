@@ -5,6 +5,4 @@ class GameController < ApplicationController
   def rules
   end
 
-  def initialization
-  end
 end

@@ -8,7 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Card.delete_all
 %w[2 3 4 5 6 7 8 9 10 11 12 13 14].each do |weight|
   description = case weight
                               when '2'  then "Cards of any kind with a weight of 2 will reset the pile count and will bypass the weight requirement"
@@ -17,9 +16,12 @@ Card.delete_all
                               when '10' then "Cards of any kind with a weight of 10 will remove the current pile of cards and will bypass the weight requirement."
                               else "Regular cards with their weight annotated on the face of the card. And as for the face cards: Jack < Queen < King < Ace"
                               end
-
-  Card.find_or_create_by! weight: weight, color: :Spades, description: description
-  Card.find_or_create_by! weight: weight, color: :Hearts, description: description
-  Card.find_or_create_by! weight: weight, color: :Diamonds, description: description
-  Card.find_or_create_by! weight: weight, color: :Clubs, description: description
+  puts "reaches"
+  Card.find_or_create_by! weight: weight, color: :Spades, description: description, :pile_id => nil
+  Card.find_or_create_by! weight: weight, color: :Hearts, description: description, :pile_id => nil
+  Card.find_or_create_by! weight: weight, color: :Diamonds, description: description, :pile_id => nil
+  Card.find_or_create_by! weight: weight, color: :Clubs, description: description, :pile_id => nil
+end
+%w[1 2 3 4].each do |name|
+  Player.find_or_create_by! name: "bot#{name}"
 end

@@ -4,9 +4,9 @@
   <% end %>
   <div id="cards" class="min-w-full">
     <% @cards.each do |card| %>
-    <%if card.color=="Hearts" && card.weight =~/11|2|3|7|10/  %>
-     <%= render card %>
-    <% end %>
+      <%if card.color=="Hearts" && card.weight.to_s =~/11|2|3|7|10/  %>
+        <%= render card %>
+      <% end %>
     <% end %>
   </div>
 </div>
