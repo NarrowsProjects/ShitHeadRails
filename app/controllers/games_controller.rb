@@ -23,9 +23,18 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
 
+    # copying all cards so that the db can be safely emptied after the game.
+    cards= Card.all.shuffle.map do |card| card.dup end
+
     void_pile = Pile.create!
     store_pile = Pile.create!
     game_pile = Pile.create!
+
+
+    cards.each do |card|
+        card.pile  = store_pile
+        card.save
+    end
 
     @game.void_pile = void_pile
     @game.store_pile = store_pile
@@ -33,15 +42,28 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
-        puts "Game created successfully"
+
+        #Instantiating all the players to later asign the cards to
+        players=[create_player(@game, game_params[:name])]
 
         game_params[:number_of_players].to_i.times do
-          create_player(@game, Faker::Name.name)
+          players << create_player(@game, Faker::Name.name)
         end
 
-        create_player(@game, game_params[:name])
+        #at the start of the game each player will have three cards face-down and six cards in hand.
+        players.each do |player|
 
-        #  so as it turns out the .save method doesn't immediately provide the object with an id and thus it can't be
+          # shift both removes the values from the array ensuring that i don't assign the same card to two different things
+          cards.shift(3).each do |card|
+             Card.update(weight: card[:weight], color: card[:color], pile_id: :face_down_pile)
+          end
+
+          cards.shift(6).each do |card|
+          Card.update(weight: card[:weight], color: card[:color], pile_id: :hand_pile)
+          end
+        end
+
+        # so as it turns out the .save method doesn't immediately provide the object with an id and thus it can't be
         # set and saved.
         @game.update_columns(void_pile_id: void_pile.id, store_pile_id: store_pile.id, game_pile_id: game_pile.id)
 
