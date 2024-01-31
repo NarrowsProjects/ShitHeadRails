@@ -5,38 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68a8b2e7-9aeb-4043-9210-56fe9f12bb92" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ShitHeadRuby.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ShitHeadRuby.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/cards_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/cards_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/game_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/game_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/cards_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/cards_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/card.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/card.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/_card.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/_card.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/_card.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/_card.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/index.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/index.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/cards/show.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/cards/show.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/front_page/frontpage.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/front_page/frontpage.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/game/initialization.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20240129115543_create_cards.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/cards_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/cards_controller_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/game_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/game_controller_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/cards.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/cards.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/card_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/card_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/system/cards_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/system/cards_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/games_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/games_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/game.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/game.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/pile.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/pile.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/player.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/player.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +129,7 @@
       <workItem from="1706626945595" duration="1880000" />
       <workItem from="1706645700280" duration="902000" />
       <workItem from="1706646739455" duration="4603000" />
-      <workItem from="1706705977509" duration="14752000" />
+      <workItem from="1706705977509" duration="21991000" />
     </task>
     <servers />
   </component>

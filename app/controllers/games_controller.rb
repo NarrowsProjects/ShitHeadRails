@@ -23,14 +23,27 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
 
+    void_pile = Pile.create!
+    store_pile = Pile.create!
+    game_pile = Pile.create!
+
+    @game.void_pile = void_pile
+    @game.store_pile = store_pile
+    @game.game_pile = game_pile
 
     respond_to do |format|
-            if @game.save
+      if @game.save
+        puts "Game created successfully"
 
         game_params[:number_of_players].to_i.times do
-        create_player(@game, Faker::Name.name)
+          create_player(@game, Faker::Name.name)
         end
+
         create_player(@game, game_params[:name])
+
+        #  so as it turns out the .save method doesn't immediately provide the object with an id and thus it can't be
+        # set and saved.
+        @game.update_columns(void_pile_id: void_pile.id, store_pile_id: store_pile.id, game_pile_id: game_pile.id)
 
         format.html { redirect_to game_url(@game), notice: "Game was successfully created." }
         format.json { render :show, status: :created, location: @game }
@@ -65,15 +78,16 @@ class GamesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game
-      @game = Game.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def game_params
-      params.require(:game).permit(:name, :number_of_players)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game
+    @game = Game.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def game_params
+    params.require(:game).permit(:name, :number_of_players)
+  end
 
   def create_player(game, player_name)
     Player.create!(
