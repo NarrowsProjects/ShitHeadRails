@@ -58,6 +58,7 @@ class GamesController < ApplicationController
              Card.update(weight: card[:weight], color: card[:color], pile_id: :face_down_pile)
           end
 
+
           cards.shift(6).each do |card|
           Card.update(weight: card[:weight], color: card[:color], pile_id: :hand_pile)
           end
