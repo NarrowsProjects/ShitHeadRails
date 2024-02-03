@@ -4,12 +4,30 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @game %>
-
-    <%= link_to "Edit this game", edit_game_path(@game), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this game", game_path(@game), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <div class="hand-pile top-10 flex flex-wrap max-h-72 overflow-scroll bg-black bg-opacity-50">
+      <% @hand_cards.each do |card| %>
+        <%= image_tag "cards/#{card.weight}#{card.color}.png", alt: "#{card.weight} of #{card.color}" , class: "w-20 mx-10 my-2" %>
+      <% end %>
     </div>
-    <%= link_to "Back to games", games_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+    <div class="face-down-pile bottom-10 absolute flex w-1/2 justify-around">
+      <% @face_down_cards.each do |card| %>
+        <%= image_tag "cards/Back.png", alt: "Face Down Card", class: "w-20"%>
+      <% end %>
+    </div>
+    
+     <div class="face-down-pile bottom-80 absolute flex justify-around w-1/2">
+      <% @face_up_cards.each do |card| %>
+        <%= image_tag "cards/Back.png", alt: "Face Down Card", class: "w-20"%>
+      <% end %>
+    </div>
+
+    <div class="flex flex-col absolute left-3 top-28">
+    <div class="inline-block ml-2 pb-3">
+      <%= button_to "End game", game_path(@game), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to "Leave", games_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
+    
+    </div>
 </div>

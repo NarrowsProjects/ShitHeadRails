@@ -15,7 +15,7 @@
  */
 
 body{
-    height:100%;
+    height:100lvh;
     background: url(https://media.istockphoto.com/id/1766876145/nl/vector/poker-table-casino-background-panoramic-diagonal-gambling-textured-material-design-with.jpg?s=612x612&w=0&k=20&c=wpoMq9eb3K_ehYmkevCVjUz25HovxN1_yNmMcTkOyBw=) center center no-repeat;
     background-size:cover;
     display:flex;

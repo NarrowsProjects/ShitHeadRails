@@ -8,12 +8,35 @@ class GamesController < ApplicationController
 
   # GET /games/1 or /games/1.json
   def show
+    @player = @game.players.find_by(name: @game.name)
+    puts "Player #{@player.name}"
+    @player.face_down_pile.cards.each do |card|
+      puts "Card #{card.color} #{card.weight}"
+
+    end
+
+    @face_down_cards = @player.face_down_pile.cards ? @player.face_down_pile.cards : []
+    @hand_cards = @player.hand_pile.cards ? @player.hand_pile.cards : []
+    @face_up_cards = @player.face_up_pile.cards ? @player.face_up_pile.cards : []
+
   end
 
   # GET /games/new
   def new
     @game = Game.new
   end
+
+  def set_face_up
+    card = Card.find(params[:card_id])
+    face_up_pile = Pile.find_or_create_by(name: 'face_up_pile')
+  
+    if card.update(pile: face_up_pile)
+      render json: { status: 'success', card_id: card.id }, status: :ok
+    else
+      render json: { status: 'error', message: 'Could not move card.' }, status: :unprocessable_entity
+    end
+  end
+
 
   # GET /games/1/edit
   def edit
@@ -55,12 +78,20 @@ class GamesController < ApplicationController
 
           # shift both removes the values from the array ensuring that i don't assign the same card to two different things
           cards.shift(3).each do |card|
-             Card.update(weight: card[:weight], color: card[:color], pile_id: :face_down_pile)
+            puts "fire"
+              puts card[:pile_id]
+              card.update(pile_id: player.face_down_pile.id)
+              puts card[:pile_id]
+
+            puts "fire"
           end
 
-
           cards.shift(6).each do |card|
-          Card.update(weight: card[:weight], color: card[:color], pile_id: :hand_pile)
+            puts card[:pile_id]
+
+          card.update(pile_id: player.hand_pile.id)
+          puts card[:pile_id]
+
           end
         end
 
